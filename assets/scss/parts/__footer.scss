@@ -1,0 +1,17 @@
+footer {
+    width: 100%;
+    background-color: $color_2;
+    font-family: $font-family_1;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+
+    @media (min-width: 1280px) {
+        font-size: 25px;
+    }
+
+    p {
+        color: $color_1;
+    }
+}
