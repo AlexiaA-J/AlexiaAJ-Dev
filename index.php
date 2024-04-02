@@ -1,9 +1,11 @@
-<?php
-get_header();
-?>
-<div class="mainContent">
-    
+<div class="mainWrapper">
+    <?php
+    get_header();
+    ?>
+    <div class="mainContent">
+
+    </div>
+    <?php
+    get_footer();
+    ?>
 </div>
-<?php
-get_footer();
-?>
