@@ -107,11 +107,14 @@
         width: 100vw;
         height: 96.5vh;
         background-color: $color_3;
+        animation: fadeIn 400ms;
 
         @media (min-width: 768px) {
             top: 55.2px;
         }
     }
+
+    
 
 
     &__navDesktop {
