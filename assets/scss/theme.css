@@ -27,12 +27,39 @@ ul {
   list-style: none;
 }
 
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
   }
 }
 .header {
@@ -44,6 +71,13 @@ ul {
   justify-content: space-between;
   align-items: center;
   background-color: #320E3B;
+  font-family: "UnicaOne", sans-serif;
+}
+.header a {
+  display: inline-block;
+}
+.header a:not(.header__logo):hover {
+  animation: shake 1s ease;
 }
 @media (min-width: 1280px) {
   .header {
@@ -51,9 +85,9 @@ ul {
   }
 }
 .header__logo {
-  font-family: "UnicaOne", sans-serif;
   font-size: 20px;
   margin-left: 20px;
+  animation: fadeInDown 1.5s ease;
 }
 @media (min-width: 768px) {
   .header__logo {
@@ -63,6 +97,16 @@ ul {
 @media (min-width: 1280px) {
   .header__logo {
     font-size: 40px;
+  }
+}
+.header__language {
+  font-size: 12px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .header__language {
+    font-size: 16px;
   }
 }
 .header .menuToggle {
@@ -110,12 +154,12 @@ ul {
 .header__navMobile {
   display: none;
 }
-.header__navMobile .menu-header-container {
+.header__navMobile .menu-header-container, .header__navMobile .menu-english-header-container {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.header__navMobile .menu-header-container .menu {
+.header__navMobile .menu-header-container .menu, .header__navMobile .menu-english-header-container .menu {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -124,11 +168,10 @@ ul {
   font-size: 30px;
   padding: 0;
   text-transform: uppercase;
-  font-family: "UnicaOne";
   color: #4B4852;
 }
 @media (min-width: 768px) {
-  .header__navMobile .menu-header-container .menu {
+  .header__navMobile .menu-header-container .menu, .header__navMobile .menu-english-header-container .menu {
     font-size: 45px;
   }
 }
@@ -160,7 +203,6 @@ ul {
     gap: 30px;
     font-size: 25px;
     text-transform: uppercase;
-    font-family: "UnicaOne";
   }
 }
 
