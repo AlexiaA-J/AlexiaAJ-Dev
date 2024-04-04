@@ -10,6 +10,7 @@ function registerMenus()
     register_nav_menus(
         array(
             'main' => __('Header'),
+            'main-english' => __('English Header')
         )
     );
 }
