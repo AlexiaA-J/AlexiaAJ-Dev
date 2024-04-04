@@ -13,5 +13,10 @@ footer {
 
     p {
         color: $color_1;
+        margin-bottom: 12px;
+
+        @media (min-width: 1280px) {
+            margin-bottom: 24px;
+        }
     }
 }

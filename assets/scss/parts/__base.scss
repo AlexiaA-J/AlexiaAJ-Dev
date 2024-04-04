@@ -9,6 +9,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: $font-family_2;
+    font-size: 16px;
+    color: $color_2;
 }
 
 a {
@@ -20,30 +23,12 @@ ul {
     list-style: none;
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+.mainContent {
+  margin: 20px;
+  width: auto;
 }
 
-@keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-@keyframes shake {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(5px, 5px) rotate(5deg); }
-  50% { transform: translate(0, 0) rotate(0eg); }
-  75% { transform: translate(-5px, 5px) rotate(-5deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
+.separator {
+  margin: 40px 100px;
+  color: $color_2;
 }

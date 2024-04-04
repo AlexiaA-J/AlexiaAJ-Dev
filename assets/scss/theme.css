@@ -5,28 +5,27 @@
   font-style: normal;
   font-weight: 400;
 }
-body {
-  margin: auto;
-  background-color: #848FA5;
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
 }
-
-.mainWrapper {
-  max-width: 1440px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
 }
-
-a {
-  text-decoration: none;
-  color: #98DFAF;
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
 }
-
-ul {
-  list-style: none;
-}
-
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -45,6 +44,26 @@ ul {
     opacity: 1;
   }
 }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
 @keyframes shake {
   0% {
     transform: translate(0, 0) rotate(0deg);
@@ -53,7 +72,7 @@ ul {
     transform: translate(5px, 5px) rotate(5deg);
   }
   50% {
-    transform: translate(0, 0) rotate(0eg);
+    transform: translate(0, 0) rotate(0deg);
   }
   75% {
     transform: translate(-5px, 5px) rotate(-5deg);
@@ -62,6 +81,41 @@ ul {
     transform: translate(0, 0) rotate(0deg);
   }
 }
+body {
+  margin: auto;
+  background-color: #9BABB5;
+}
+
+.mainWrapper {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto";
+  font-size: 16px;
+  color: #320E3B;
+}
+
+a {
+  text-decoration: none;
+  color: #98DFAF;
+}
+
+ul {
+  list-style: none;
+}
+
+.mainContent {
+  margin: 20px;
+  width: auto;
+}
+
+.separator {
+  margin: 40px 100px;
+  color: #320E3B;
+}
+
 .header {
   position: relative;
   width: 100%;
@@ -153,11 +207,13 @@ ul {
 }
 .header__navMobile {
   display: none;
+  z-index: 100;
 }
 .header__navMobile .menu-header-container, .header__navMobile .menu-english-header-container {
   width: 100%;
   display: flex;
   align-items: center;
+  background-color: #98DFAF;
 }
 .header__navMobile .menu-header-container .menu, .header__navMobile .menu-english-header-container .menu {
   width: 100%;
@@ -168,7 +224,10 @@ ul {
   font-size: 30px;
   padding: 0;
   text-transform: uppercase;
-  color: #4B4852;
+}
+.header__navMobile .menu-header-container .menu .menu-item a, .header__navMobile .menu-english-header-container .menu .menu-item a {
+  color: #320E3B;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .header__navMobile .menu-header-container .menu, .header__navMobile .menu-english-header-container .menu {
@@ -177,11 +236,11 @@ ul {
 }
 .header .active {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 42.9px;
   width: 100vw;
-  height: 96.5vh;
-  background-color: #848FA5;
+  height: 100vh;
+  background-color: #9BABB5;
   animation: fadeIn 400ms;
 }
 @media (min-width: 768px) {
@@ -206,6 +265,52 @@ ul {
   }
 }
 
+.fixed {
+  position: fixed;
+  z-index: 100;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  gap: 20px;
+}
+.intro .hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 1280px) {
+  .intro .hero {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.intro .hero__picture img {
+  animation: fadeInRight 1.5s ease;
+  border-radius: 50px;
+}
+.intro .hero__siteTitle {
+  animation: fadeInLeft 1.5s ease;
+  text-align: center;
+  color: #320E3B;
+}
+.intro__text {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .intro__text {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .intro__text {
+    width: 80%;
+  }
+}
+
 footer {
   width: 100%;
   background-color: #320E3B;
@@ -222,4 +327,10 @@ footer {
 }
 footer p {
   color: #98DFAF;
+  margin-bottom: 12px;
+}
+@media (min-width: 1280px) {
+  footer p {
+    margin-bottom: 24px;
+  }
 }/*# sourceMappingURL=theme.css.map */

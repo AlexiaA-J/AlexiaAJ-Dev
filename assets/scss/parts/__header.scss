@@ -93,11 +93,12 @@
 
     &__navMobile {
         display: none;
-
+        z-index: 100;
         .menu-header-container, .menu-english-header-container {
             width: 100%;
             display: flex;
             align-items: center;
+            background-color: $color_1;
 
             .menu {
                 width: 100%;
@@ -108,7 +109,13 @@
                 font-size: 30px;
                 padding: 0;
                 text-transform: uppercase;
-                color: $color_4;
+
+                .menu-item {
+                    a {
+                        color: $color_2;
+                        font-weight: 700;
+                    }
+                }
 
                 @media (min-width: 768px) {
                     font-size: 45px;
@@ -119,10 +126,10 @@
 
     .active {
         display: flex;
-        position: absolute;
+        position: fixed;
         top: 42.9px;
         width: 100vw;
-        height: 96.5vh;
+        height: 100vh;
         background-color: $color_3;
         animation: fadeIn 400ms;
 
@@ -149,4 +156,9 @@
             }
         }
     }
+}
+
+.fixed {
+    position: fixed;
+    z-index: 100;
 }

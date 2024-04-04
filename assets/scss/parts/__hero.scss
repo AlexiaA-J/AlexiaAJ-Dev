@@ -1,0 +1,41 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    gap: 20px;
+
+    .hero {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media (min-width: 1280px) {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        &__picture img {
+            animation: fadeInRight 1.5s ease;
+            border-radius: 50px;
+        }
+
+        &__siteTitle {
+            animation: fadeInLeft 1.5s ease;
+            text-align: center;
+            color: $color_2;
+        }
+    }
+
+    &__text {
+        text-align: center;
+
+        @media (min-width: 768px) {
+            font-size: 20px;
+        }
+
+        @media (min-width: 1280px) {
+            width: 80%;
+        }
+    }
+}
