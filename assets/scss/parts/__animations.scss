@@ -10,6 +10,17 @@
       transform: none;
     }
   }
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
   
 @keyframes fadeIn {
     0% {
@@ -46,7 +57,7 @@
 
 // SHAKES
   
-  @keyframes shake {
+@keyframes shake {
     0% { transform: translate(0, 0) rotate(0deg); }
     25% { transform: translate(5px, 5px) rotate(5deg); }
     50% { transform: translate(0, 0) rotate(0deg); }
