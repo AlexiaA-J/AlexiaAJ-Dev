@@ -1,0 +1,33 @@
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    margin-bottom: 40px;
+    gap: 20px;
+
+
+    &__title {
+        animation: fadeInUp 1.5s ease;
+        text-align: center;
+        color: $color_2;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        text-align: center;
+        padding: 20px 0;
+
+        @media (min-width: 768px) {
+            font-size: 20px;
+        }
+
+        @media (min-width: 1280px) {
+            width: 80%;
+        }
+    }
+
+    .mysql {
+        margin-right: -20px;
+    }
+}
