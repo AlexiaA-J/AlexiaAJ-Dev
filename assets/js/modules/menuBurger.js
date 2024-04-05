@@ -1,3 +1,5 @@
+// Allow open/close on Burger Menu
+
 function initializeMenuToggle() {
     let menuToggle = document.querySelector(".menuToggle");
     let header = document.querySelector(".header");
