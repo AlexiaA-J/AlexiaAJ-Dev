@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<?php $current_url = $_SERVER['REQUEST_URI']; ?>
-<html <?php echo (strpos($current_url, 'eng') !== false) ? 'lang="en"' : 'lang="fr"'; ?>>
+<?php 
+    $current_url = $_SERVER['REQUEST_URI'];
+    $is_eng = strpos($current_url, 'eng') !== false; 
+?>
+<html <?php echo ($is_eng) ? 'lang="en"' : 'lang="fr"'; ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php if (strpos($current_url, 'eng') !== false) : ?>
+    <?php if ($is_eng) : ?>
         <meta name="description" content="Web Developer based in Grenoble, France. 
         Explore my portfolio and contact me if you need my skills.">
     <?php else: ?>
@@ -14,7 +17,7 @@
     <title>
         <?php
             // Check if the current URL contains 'eng'
-            if (strpos($current_url, 'eng') !== false) {
+            if ($is_eng) {
                 // If 'eng' is found in the URL, set the English title
                 echo "Alexia A-J - Web Developer";
             } else {
@@ -42,7 +45,7 @@
                 <div class="header__navDesktop">
                     <?php
                     // Check if the current URL contains 'eng'
-                    if (strpos($current_url, 'eng') !== false) {
+                    if ($is_eng) {
                         // If 'eng' is found in the URL, use the English menu
                         wp_nav_menu(array('theme_location' => 'main-english'));
                     } else {
@@ -60,7 +63,7 @@
                 <div class="header__navMobile">
                     <?php
                     // Check if the current URL contains 'eng'
-                    if (strpos($current_url, 'eng') !== false) {
+                    if ($is_eng) {
                         // If 'eng' is found in the URL, use the English menu
                         wp_nav_menu(array('theme_location' => 'main-english'));
                     } else {
