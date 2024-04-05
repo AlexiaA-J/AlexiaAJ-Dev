@@ -32,3 +32,11 @@ ul {
   margin: 40px 100px;
   color: $color_2;
 }
+
+.active-wrapper {
+  margin-top: 64px;
+    
+  @media (min-width: 768px) {
+    margin-top: 75.2px;
+  }
+}
