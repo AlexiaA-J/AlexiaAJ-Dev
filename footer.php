@@ -1,5 +1,5 @@
         <footer>
-            <div class="modal-overlay">    
+            <div class="modal-overlay">
             <?php 
                 $current_url = $_SERVER['REQUEST_URI'];
                 if (strpos($current_url, 'eng') !== false) : ?>
