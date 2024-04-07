@@ -1,0 +1,190 @@
+.modal-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.75);
+    display: none;
+      
+    #wpcf7-f77-o1, #wpcf7-f78-o1 {
+        position:absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+      
+    .contactForm {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px !important;
+        width: 225px;
+        height: auto; 
+        overflow: hidden;
+        border: 5px solid $color_1;
+        align-items: center;
+        background-color: $color_2;
+
+        @media (min-width: 360px){
+            width: 250px;
+            height: auto; 
+            overflow: hidden;
+        }
+
+        @media (min-width: 769px){
+            width: 597px;
+            height: auto;
+        }
+    }
+
+    .formTitle {
+        color: $color_1;
+        font-size: 40px;
+        margin: 0;
+        line-height: 0.8;
+    }
+
+    p:has(#modalClose) {
+        position: absolute;
+        right: -42px;
+        font-size: 80px;
+        padding: 0;
+        margin: 0;
+        line-height: 0.3;
+        cursor: pointer;
+        transform: rotate(0);
+        transition: transform 500ms;
+
+        br {
+            display: none;
+        }
+
+        &:hover {
+            transform: rotate(180deg);
+            transition: transform 500ms;
+        }
+
+        @media (min-width: 802px) {
+            right: -70px;
+        }
+    }
+      
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        label {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1px;
+            margin-top: 14px;
+
+            @media (min-width: 769px){
+                margin-top: 24px;
+            }
+        }
+    }
+      
+    .formtitle {
+        font-family: $font-family_2;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .wpcf7-not-valid-tip {
+        margin-top: 10px;
+        margin-bottom: -19.4px;
+        font-size: 10px;
+
+        @media (min-width: 769px) {
+            margin-top: 10px;
+            margin-bottom: -24.4px;
+            font-size: 12px;
+        }
+
+    }
+      
+    .wpcf7-text{
+        width: 180px;
+        height: 35px;
+        border-radius: 8px;
+        border: 1px solid #B8BBC2;
+        padding: 0 3px;
+        font-family: $font-family_2;
+
+        @media (min-width: 359px){
+            width: 190px;
+            height: 40px;
+        }
+
+        @media (min-width: 769px) {
+            width: 420px;
+            height: 40px;
+        }
+    }
+      
+    .wpcf7-textarea{
+        resize: none;
+        width: 180px;
+        height: 100px;
+        border-radius: 8px;
+        border: 1px solid #B8BBC2;
+        padding: 5px 3px;
+        font-family: $font-family_2;
+        font-size: 13px;
+
+        @media (min-width: 359px){
+            width: 190px;
+        }
+
+        @media (min-width: 769px) {
+            width: 420px;
+            height: 210px; 
+        }
+    }
+      
+    .wpcf7-text:focus, .wpcf7-textarea:focus {
+        outline:none;
+    }
+      
+    .wpcf7-spinner{
+      display: none;
+    }
+      
+    .wpcf7-submit {
+        font-family: $font-family_1;
+        color: $color_2;
+        background-color: $color_1;
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+        border-radius: 5px;
+        width: 195px;
+        height: 45px;
+        padding: 0;
+        text-transform: uppercase;
+        //transition: background-color 1000ms, color 1000ms;
+        margin-top: 18px;
+        margin-bottom: 20px;
+
+        &:hover {
+            animation: shake 1s ease;
+        }
+
+        @media (min-width: 769px){
+            width: 267px;
+            height: 50px; 
+        }
+    }
+}
+
+.wpcf7-response-output {
+    display: none;
+}
+
+.active-modal {
+    display: flex !important;
+  }
