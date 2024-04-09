@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center !important;
+    justify-content: center;
     margin-bottom: 40px;
     gap: 20px;
 
@@ -12,22 +13,125 @@
         color: $color_2;
         padding-bottom: 20px;
         text-transform: uppercase;
+
+        &.reveal {
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 5s ease;
+        }
+
+        &.active {
+            transform: translateY(0px);
+            opacity: 1;
+            transition: all 1s ease;   
+        }
+
+    }
+
+    &__logos {
+        width: 80%;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        background: $gradient;
+        box-shadow:  $box-shadow;
+
+        @media (min-width: 768px) {
+            width: auto;
+        }
+
+        .html {
+            animation: fadeInRightLogos 2s ease;
+        }
+
+        .css {
+            animation: fadeInRightLogos 1.5s ease;
+        }
+
+        .js {
+            animation: fadeInRightLogos 1s ease;
+        }
+
+        .react {
+            animation: fadeInLeftLogos 1.2s ease;
+        }
+
+        .php {
+            animation: fadeInLeftLogos 1.4s ease;
+        }
+
+        .mysql {
+            margin-right: -20px;
+            animation: fadeInLeftLogos 1.6s ease;
+        }
+
+        .mongo {
+            margin-right: -5px;
+            animation: fadeInLeftLogos 1.8s ease;
+        }
     }
 
     &__text {
-        text-align: center;
-        padding: 20px 0;
+        display: flex;
+        align-items: center !important;
+        gap: 20px;
 
-        @media (min-width: 768px) {
-            font-size: 20px;
+        .text {
+            &__top {
+                width: 75%;
+                animation: fadeInRight 2s ease;
+
+                @media (min-width: 360px) {
+                    width: 80%;
+                }
+
+                @media (min-width: 768px) {
+                    width: 85%;
+                }
+            }
+
+            &__bottom {
+                animation: fadeInRight 2s ease;
+            }
+
+            &__right {
+                animation: fadeInLeft 2s ease;
+            }
+
+            &__wrapper {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                gap: 20px;
+
+                @media (min-width: 768px) {
+                    flex-direction: row;
+                }
+
+                @media (min-width: 1280px) {
+                    width: 88%;
+                }
+            }
+
+            &__top, &__bottom, &__right {
+                padding: 10px 20px;
+                border-radius: 10px;
+                background: $gradient;
+                box-shadow:  $box-shadow;
+            }
         }
-
-        @media (min-width: 1280px) {
-            width: 80%;
-        }
-    }
-
-    .mysql {
-        margin-right: -20px;
     }
 }
+
+//        text-align: center;
+// padding: 20px 0;
+
+// @media (min-width: 768px) {
+//     font-size: 20px;
+// }
+
+// @media (min-width: 1280px) {
+//     width: 80%;
+// }

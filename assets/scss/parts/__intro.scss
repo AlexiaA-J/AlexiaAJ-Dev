@@ -4,6 +4,12 @@
     align-items: center !important;
     gap: 20px;
 
+    &__siteTitle {
+        animation: fadeInDown 1.5s ease;
+        text-align: center;
+        color: $color_2;
+    }
+
     .hero {
         width: 100%;
         display: flex;
@@ -15,27 +21,67 @@
             justify-content: center;
         }
 
-        &__picture img {
-            animation: fadeInRight 1.5s ease;
+        &__picture {    
             border-radius: 50px;
+            img {
+                animation: fadeInRight 2s ease;
+                border-radius: 50px;
+                width: 30%;
+                background: $gradient;
+                box-shadow:  $box-shadow;
+            }
         }
 
-        &__siteTitle {
-            animation: fadeInLeft 1.5s ease;
-            text-align: center;
-            color: $color_2;
+        &__text {
+            width: 90%;
+            display: flex;
+            gap: 20px;
+
+            @media (min-width: 768px) {
+                width: 90%;
+            }
+
+            @media (min-width: 1280px) {
+                width: 70%;
+            }
+
+            .text {
+                &__top, &__left, &__right {
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    background: $gradient;
+                    box-shadow:  $box-shadow;
+                }
+
+                &__top, &__right {
+                    animation: fadeInLeft 2s ease;
+                }
+
+                &__left {
+                    animation: fadeInLeft 1.5s ease;
+                }
+
+                &__wrapper {
+                    flex-direction: column;
+                    gap: 20px;
+
+                    @media (min-width: 768px) {
+                        flex-direction: row;
+                    }
+                }
+            }
         }
     }
+}
 
-    &__text {
-        text-align: center;
-
-        @media (min-width: 768px) {
-            font-size: 20px;
-        }
-
-        @media (min-width: 1280px) {
-            width: 80%;
-        }
-    }
+.later {
+    text-align: center;
+    
+            @media (min-width: 768px) {
+                font-size: 20px;
+            }
+    
+            @media (min-width: 1280px) {
+                width: 80%;
+            }
 }

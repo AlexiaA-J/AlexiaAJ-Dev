@@ -11,18 +11,128 @@
         text-align: center;
         color: $color_2;
         text-transform: uppercase;
+
+        &.reveal {
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 5s ease;
+        }
+
+        &.active {
+            transform: translateY(0px);
+            opacity: 1;
+            transition: all 1s ease;   
+        }
     }
 
     &__text {
         text-align: center;
+        width: 80%;
         padding: 20px 0;
+        animation: fadeInLeft 2s ease-out;
+        font-size: 16px !important;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: $gradient;
+        box-shadow:  $box-shadow;
 
         @media (min-width: 768px) {
-            font-size: 20px;
+            width: 85%;
+        }
+    }
+}
+
+.gallery {
+    width: 100%;
+
+    @media (min-width: 1280) {
+        width: 80%;
+    }
+
+    .project {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background: $gradient;
+        box-shadow:  $box-shadow;
+        padding: 20px 0;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-family: $font-family_1;
+
+        &__main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $color_1;
+            img {
+                width: 80%;
+                border-radius: 20px;
+                background: $gradient;
+                box-shadow:  $box-shadow;
+            }
         }
 
-        @media (min-width: 1280px) {
-            width: 80%;
+        &__infos {
+            margin-top: -15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .technos {
+                color: $color_2;
+                font-size: 16px;
+                font-weight: 500;
+                font-family: $font-family_2;
+                text-transform: capitalize;
+                text-align: center;
+            }
+
+            .btns {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                .github {
+                    &__logo {
+                        width: 50px;
+                        transition: transform 1000ms;
+                        border-radius: 50px;
+                        background: $gradient;
+                        box-shadow:  $box-shadow;
+
+                        &:hover {
+                            transform: rotate(360deg);
+                            transition: transform 1000ms;
+                        }
+                    }
+                }
+
+                .site {
+                    &__btn {
+                        color: $color_2;
+                        font-family: $font-family_1;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        padding: 10px 20px;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        background: #98DFAF;
+                        box-shadow: inset -5px 5px 12px #5b8669,
+                                    inset 5px -5px 12px #d5fff5;
+                        border: none;
+
+                        &:hover {
+                            animation: shake 1s ease;
+                        }
+                    }
+                }
+            }
         }
     }
 }
