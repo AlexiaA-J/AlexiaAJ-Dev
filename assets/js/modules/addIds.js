@@ -2,7 +2,9 @@
 
 function initializeAddIds() {
     const skillsElement = document.querySelector('.skills');
-    if (skillsElement) {
+    const projectsElement = document.querySelector('.projects')
+    if (skillsElement, projectsElement) {
         skillsElement.setAttribute('id', 'skills');
+        projectsElement.setAttribute('id', 'projects')
     }
 };
