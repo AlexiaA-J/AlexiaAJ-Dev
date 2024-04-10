@@ -533,6 +533,7 @@ ul {
   transform: translateY(20px);
   opacity: 0;
   transition: all 5s ease;
+  margin-bottom: 20px;
 }
 .projects__title.active {
   transform: translateY(0px);
