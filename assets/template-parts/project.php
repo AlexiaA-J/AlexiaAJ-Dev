@@ -15,48 +15,55 @@ if (strpos($current_url, 'eng') !== false) {
 <div class="project">
     <div class="project__main">
         <?php
-            // Get the image field value
-            $image = get_field('preview');
+        // Get the image field value
+        $image = get_field('preview');
 
-            // Check if the image field has a value
-            if ($image) {
-                // Output the image tag with src and alt attributes
-                echo '<img class="reveal" src="' . esc_attr($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-            }
+        // Check if the image field has a value
+        if ($image) {
+            // Output the image tag with src and alt attributes
+            echo '<img class="reveal" src="' . esc_attr($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+        }
         ?>
         <h3>
             <?php echo get_the_title(); ?>
         </h3>
     </div>
     <div class="project__infos">
-    <p class="technos">
-        <?php
-        $terms = get_the_terms(get_the_ID(), 'technology');
+        <p class="technos">
+            <?php
+            $terms = get_the_terms(get_the_ID(), 'technology');
 
-        if ($terms && !is_wp_error($terms) && !empty($terms)) {
-            // Initialize an empty array to store term names
-            $term_names = array();
+            if ($terms && !is_wp_error($terms) && !empty($terms)) {
+                // Initialize an empty array to store term names
+                $term_names = array();
 
-            // Loop through each term and collect term names
-            foreach ($terms as $term) {
-                $term_names[] = esc_html($term->name); // Store each term name in the array
+                // Loop through each term and collect term names
+                foreach ($terms as $term) {
+                    $term_names[] = esc_html($term->name); // Store each term name in the array
+                }
+
+                // Join the term names array into a comma-separated string
+                $term_list = implode(', ', $term_names);
+
+                // Output the list of terms within the <p> element
+                echo $technos . $term_list;
             }
-
-            // Join the term names array into a comma-separated string
-            $term_list = implode(', ', $term_names);
-
-            // Output the list of terms within the <p> element
-            echo $technos . $term_list;
-        }
-        ?>
-    </p>
+            ?>
+        </p>
         <div class="btns">
             <a class="github" href="<?php echo esc_url(get_field('github_url')); ?>">
-                <img class="github__logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/github-dark.png'); ?>" alt="Github logo">
+                <img class="github__logo"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/github-dark.png'); ?>"
+                    alt="Github logo">
             </a>
-            <a class="site" href="<?php echo esc_url(get_field('site_url')); ?>">
-                <button class="site__btn"><?php echo esc_html($button_text); ?></button>
-            </a>
+            <?php
+            $site_url = get_field('site_url');
+            if (!empty($site_url)):
+                ?>
+                <a class="site" href="<?php echo esc_url($site_url); ?>">
+                    <button class="site__btn"><?php echo esc_html($button_text); ?></button>
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </div>
